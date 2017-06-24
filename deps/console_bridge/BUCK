@@ -1,0 +1,20 @@
+remote_file(
+  name = 'console_bridge_tar',
+  url = 'https://github.com/ros/console_bridge/archive/indigo-devel.tar.gz',
+  sha1 = 'b60186ab899dce69e024f6e983cedfd452265906',
+)
+
+genrule(
+  name = 'console_bridge',
+  srcs = [
+    ':console_bridge_tar',
+  ],
+  cmd = 'tar xvf $SRCS --strip=1' \
+  	' && mkdir -p $SRCDIR/build' \
+  	' && cd $SRCDIR/build' \
+  	' && cmake .. -DCMAKE_INSTALL_PREFIX=$OUT' \
+  	' && make' \
+  	' && make install',
+  out = 'prefix',
+  visibility = ['PUBLIC'],
+)
