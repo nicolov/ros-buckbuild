@@ -1,22 +1,19 @@
+include_defs('//ros/rosdistro/DEFS')
+
 genrule(
   name = 'ros',
-  srcs = [
-    '//ros/rosdistro:catkin.zip',
-    '//ros/rosdistro:cpp_common.zip',
+  srcs = rosdistro_tarballs + [
     '//deps/console_bridge:console_bridge',
   ],
   cmd = 'unzip "$SRCDIR/*.zip" \
          && catkin config \
             --init \
             --mkdirs \
-            --no-extend \
             --source-space . \
             --isolate-devel \
             --install \
             --install-space $OUT \
             --merge-install \
-            --cmake-args \
-              -DCMAKE_PREFIX_PATH=$(location //deps/console_bridge:console_bridge) \
          && catkin build \
          && ls $OUT',
   out = 'install',

@@ -26,7 +26,7 @@ def main():
     package_names = root_packages.union(
         get_recursive_dependencies(cached_distro, root_packages))
 
-    print(f'Bundling {len(package_names)} packages')
+    print(f'Found {len(package_names)} packages.')
 
     rosinstall_data = generate_rosinstall(
         cached_distro, package_names, flat=True, tar=True)
@@ -49,17 +49,25 @@ def main():
             'sha1': sha1sum,
         })
 
-    sh.mkdir('-p', 'ros')
+    sh.mkdir('-p', 'ros/rosdistro')
 
-    with open('ros/BUCK', 'w') as out_f:
+    # Save BUCK file with remote_file rules
+    with open('ros/rosdistro/BUCK', 'w') as out_f:
         for rf in remote_files:
             s = f"""remote_file(
-  name = '{rf['name']}',
+  name = '{rf['name']}.zip',
   url = '{rf['url']}',
-  sha1 = '{rf['sha1']}'
+  sha1 = '{rf['sha1']}',
+  visibility = ['PUBLIC'],
 )
 """
-            out_f.write(s)        
+            out_f.write(s)
+
+    # Save DEFS file with the list of tarballs
+    with open('ros/rosdistro/DEFS', 'w') as out_f:
+        out_f.write("rosdistro_tarballs = [\n{}\n]".format(
+            '\n'.join([f"  '//ros/rosdistro:{rf['name']}.zip',"
+            for rf in remote_files])))
 
 
 if __name__ == '__main__':

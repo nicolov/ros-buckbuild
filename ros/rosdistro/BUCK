@@ -1,7 +1,127 @@
 remote_file(
+  name = 'rostime.zip',
+  url = 'https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/rostime/0.5.8-0.zip',
+  sha1 = '560fbd383e422634ff689469e2f20e6f507f00fe',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'cmake_modules.zip',
+  url = 'https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.3-0.zip',
+  sha1 = '0e1b5a4f78e2c44581eb0f198058e88c99e33fb9',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'xmlrpcpp.zip',
+  url = 'https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/xmlrpcpp/1.11.21-0.zip',
+  sha1 = 'f6153be613c562be8656b34e60ee0cea0463f2b9',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'genlisp.zip',
+  url = 'https://github.com/ros-gbp/genlisp-release/archive/release/indigo/genlisp/0.4.15-0.zip',
+  sha1 = 'a03e9fb34d130d6eb12fd461e1512285c5a55076',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'rosgraph_msgs.zip',
+  url = 'https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/rosgraph_msgs/1.11.2-0.zip',
+  sha1 = '846f139e888764fff96a6d1c38d7c9a93ba8212f',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'message_generation.zip',
+  url = 'https://github.com/ros-gbp/message_generation-release/archive/release/indigo/message_generation/0.2.10-0.zip',
+  sha1 = '699b11fec2bd36c20dd038f4ee2cc195723b8fd4',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'rosbuild.zip',
+  url = 'https://github.com/ros-gbp/ros-release/archive/release/indigo/rosbuild/1.11.14-0.zip',
+  sha1 = '50792c801a4b2a888e8348559fbe55908d625898',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'message_runtime.zip',
+  url = 'https://github.com/ros-gbp/message_runtime-release/archive/release/indigo/message_runtime/0.4.12-0.zip',
+  sha1 = 'b4d026b5864538320c7a638ecb1d78dad9a38b94',
+  visibility = ['PUBLIC'],
+)
+remote_file(
   name = 'cpp_common.zip',
   url = 'https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/cpp_common/0.5.8-0.zip',
   sha1 = '69c56184a30321796712cf2bc888a7f67a25358d',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'roslib.zip',
+  url = 'https://github.com/ros-gbp/ros-release/archive/release/indigo/roslib/1.11.14-0.zip',
+  sha1 = '33a5325cd87509bd48b184ad91ea88ee1d85eea1',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'genmsg.zip',
+  url = 'https://github.com/ros-gbp/genmsg-release/archive/release/indigo/genmsg/0.5.8-0.zip',
+  sha1 = '4bfb9f41619ae966f060fdbb1817876cfe06e193',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'genpy.zip',
+  url = 'https://github.com/ros-gbp/genpy-release/archive/release/indigo/genpy/0.5.10-0.zip',
+  sha1 = '236409d473091730cf640d2af1c41b76d1e1fa5c',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'roscpp_traits.zip',
+  url = 'https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_traits/0.5.8-0.zip',
+  sha1 = 'b71f807f55dd740557072eba15896ec8baf20a90',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'rospack.zip',
+  url = 'https://github.com/ros-gbp/rospack-release/archive/release/indigo/rospack/2.2.8-0.zip',
+  sha1 = '44b520042e3cc6881d97ba56cec68d76aa3fe920',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'roscpp.zip',
+  url = 'https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roscpp/1.11.21-0.zip',
+  sha1 = '0361b12251cf0c5dad8f581e6fb746afc802d2a8',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'rosconsole.zip',
+  url = 'https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosconsole/1.11.21-0.zip',
+  sha1 = '6cbc71b3a50a669498bc7989e4027b24880abbb4',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'roslang.zip',
+  url = 'https://github.com/ros-gbp/ros-release/archive/release/indigo/roslang/1.11.14-0.zip',
+  sha1 = '6265de5684c3fc4ff20c118e83861b830ac70179',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'std_msgs.zip',
+  url = 'https://github.com/ros-gbp/std_msgs-release/archive/release/indigo/std_msgs/0.5.10-0.zip',
+  sha1 = '77c8d54a72eda254534f9239cd7545b7ff9eaad1',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'roscpp_serialization.zip',
+  url = 'https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_serialization/0.5.8-0.zip',
+  sha1 = '354792011dd45b603a63bb77671aed7cdda31559',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'gencpp.zip',
+  url = 'https://github.com/ros-gbp/gencpp-release/archive/release/indigo/gencpp/0.5.5-0.zip',
+  sha1 = 'c7c5331e86af79a752c3ed4e201279b66ec64efa',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'rosunit.zip',
+  url = 'https://github.com/ros-gbp/ros-release/archive/release/indigo/rosunit/1.11.14-0.zip',
+  sha1 = '6b511d974f9eb915bec2739b6438717fb0cbef8e',
   visibility = ['PUBLIC'],
 )
 remote_file(
