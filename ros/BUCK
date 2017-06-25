@@ -20,10 +20,10 @@ genrule(
 )
 
 prebuilt_cxx_library(
-  name = 'ros',
+  name = 'roscpp',
+  lib_dir = '$(location :ros-wkspace)/lib/',
   include_dirs = [
     '$(location :ros-wkspace)/include',
   ],
-  header_only = True,
   visibility = ['PUBLIC'],
 )

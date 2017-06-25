@@ -1,5 +1,5 @@
 cxx_binary(
   name = 'example',
   srcs = ['main.cpp'],
-  deps = ['//ros:ros']
+  deps = ['//ros:roscpp']
 )
