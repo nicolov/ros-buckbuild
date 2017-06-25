@@ -69,7 +69,7 @@ remote_file(
   sha1 = '846f139e888764fff96a6d1c38d7c9a93ba8212f'
 )
 remote_file(
-  name = 'catkin',
+  name = 'catkin.zip',
   url = 'https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.19-0.zip',
   sha1 = '2aa1864d4692b364715aa5b46a9587833da80e33'
 )
@@ -112,13 +112,22 @@ remote_file(
 genrule(
   name = 'ros',
   srcs = [
-    ':cpp_common.zip',
+    ':catkin.zip',
     '//deps/console_bridge:console_bridge',
   ],
-  cmd = 'unzip $SRCDIR/*.zip' \
-        ' && ls > $OUT' \
-        ' && cd roscpp_core-release-release-indigo-cpp_common-0.5.8-0' \
-        ' && mkdir -p build' \
-        ' && cmake ..'
-  out = 'a',
+  cmd = 'unzip $SRCDIR/*.zip \
+         && catkin config \
+            --init \
+            --mkdirs \
+            --no-extend \
+            --source-space . \
+            --isolate-devel \
+            --install \
+            --install-space $OUT \
+            --merge-install \
+            --cmake-args \
+              -DCMAKE_PREFIX_PATH=$(location //deps/console_bridge:console_bridge) \
+         && catkin build \
+         && ls $OUT',
+  out = 'install',
 )
