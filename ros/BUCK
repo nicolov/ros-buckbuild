@@ -1,7 +1,7 @@
 include_defs('//ros/rosdistro/DEFS')
 
 genrule(
-  name = 'ros',
+  name = 'ros-wkspace',
   srcs = rosdistro_tarballs + [
     '//deps/console_bridge:console_bridge',
   ],
@@ -17,4 +17,13 @@ genrule(
          && catkin build \
          && ls $OUT',
   out = 'install',
+)
+
+prebuilt_cxx_library(
+  name = 'ros',
+  include_dirs = [
+    '$(location :ros-wkspace)/include',
+  ],
+  header_only = True,
+  visibility = ['PUBLIC'],
 )
