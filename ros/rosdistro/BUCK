@@ -1,0 +1,12 @@
+remote_file(
+  name = 'cpp_common.zip',
+  url = 'https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/cpp_common/0.5.8-0.zip',
+  sha1 = '69c56184a30321796712cf2bc888a7f67a25358d',
+  visibility = ['PUBLIC'],
+)
+remote_file(
+  name = 'catkin.zip',
+  url = 'https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.19-0.zip',
+  sha1 = '2aa1864d4692b364715aa5b46a9587833da80e33',
+  visibility = ['PUBLIC'],
+)
