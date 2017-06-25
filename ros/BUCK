@@ -113,9 +113,10 @@ genrule(
   name = 'ros',
   srcs = [
     ':catkin.zip',
+    ':cpp_common.zip',
     '//deps/console_bridge:console_bridge',
   ],
-  cmd = 'unzip $SRCDIR/*.zip \
+  cmd = 'unzip "$SRCDIR/*.zip" \
          && catkin config \
             --init \
             --mkdirs \
