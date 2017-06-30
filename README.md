@@ -1,5 +1,3 @@
-# buckros
+# Build ROS packages using Buck
 
-Create buck `remote_file` rules for the ros distribution.
-
-	./main
+Tooling to build ROS indigo and custom packages using the [Buck build system](https://buckbuild.com).
